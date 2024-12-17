@@ -240,10 +240,16 @@ button {
 #create-event-form {
   width: calc(100% - 23px); 
   max-width: 600px;
-  margin: 20px auto;
-  padding: 20px; 
+  margin: 20px auto; 
   background-color: rgb(255, 147, 85);
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+div#create-event-form-in {
+  display: flex;
+  flex-direction: column;
+  /* align-content: space-around; */
+  align-items: center;
 }
 
 #create-event-form-in input, 
@@ -255,7 +261,6 @@ button {
   border-radius: 5px; 
   font-size: 16px;
   box-sizing: border-box;
-  margin-left: 0;
 }
 
 .file-upload {
@@ -289,15 +294,15 @@ button {
 }
 
 #create-event-form button {
-  width: calc(50% - 10px); /* Две кнопки на одной строке */
+  width: calc(100% - 10px);
   padding: 10px;
-  margin: 15px 5px 0;
+  margin: 30px 5px 0;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   color: #fff;
-  background-color: #333; 
+  background-color: #333;
   transition: background-color 0.3s;
 }
 
