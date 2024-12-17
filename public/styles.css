@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@500;700&display=swap');
 
-
+/*
 body, h2, h3, h4, button, input, textarea {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}*/
+
+body, h2, h3, h4, button, input, textarea {
+  font-family: Roboto;
 }
 
 body, html {
   height: 100%; /* Устанавливаем высоту для родителя */
   margin: 0; /* Убираем отступы */
-  display: flex; /* Включаем flexbox для центрирования */
   justify-content: center; /* Центрируем по горизонтали */
   align-items: center; /* Центрируем по вертикали */
   background-color: #f0f0f0; /* Цвет фона страницы */
@@ -19,16 +23,11 @@ body, html {
 }
 
 .phone-frame {
-  /*width: 375px; /* Ширина телефона */
-  /*height: 667px; /* Высота телефона */
   width: 100%;
   height: 100%;
-  /*border: 16px solid #000; /* Рамка телефона */
-  /*border-radius: 36px; /* Скругление углов */
-  /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Тень для рамки */
-  position: relative; /* Для позиционирования элементов внутри */
-  background-color: #fff; /* Цвет фона телефона */
-  overflow: hidden; /* Прячем элементы, выходящие за пределы */
+  position: relative; 
+  background-color: #fff; 
+  overflow: hidden;
 }
 
 .phone-frame::before {
@@ -85,52 +84,49 @@ header {
   border: 4px solid #333;
   border-radius: 15px; 
   width: 350px;
-  margin-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   color: #333;
   margin-top: 20px;
 }
 
 #navigation3 button{
   background-color: #ffffff;
-  width: 100px;
-  margin-top: 55px;
-
+  width: 100%;
 }
 
 #screen6 nav button{
   background-color: white; 
-  width: 100%; 
-  margin-top: 193px;
+  width: 100%;
 }
-
-#add_button button{
-  background-color: #333;
-  width: 200px;
-  margin-left: 90px;
-}
-
 #screen4 nav button{
-  margin-top: 133px;
   background-color: white; 
-  width: 100px;
+  width: 100%;
 }
-
 #screen5 nav button{
   background-color: white; 
-  width: 100px;
-  margin-top: 8px;
+  width: 100%;
 }
-
 #screen7 nav button{
   background-color: white; 
-  width: 100px;
-  margin-top: 106px;
+  width: 100%;
 }
-
 #screen8 nav button{
   background-color: white; 
-  width: 100px;
-  margin-top: 10px;
+  width: 100%;
+}
+#screen10 nav button{
+  background-color: white; 
+  width: 100%;
+}
+#screen11 nav button{
+  background-color: white; 
+  width: 100%;
+}
+#screen12 nav button{
+  background-color: white; 
+  width: 100%;
 }
 
 .events-grid button{
@@ -138,15 +134,26 @@ header {
   background-color:transparent;
 }
 
-.profile img{
-  border-radius: 10em; 
-  margin-left: 90px;
-  margin-top: 20px;
+.profile-pic{
+  border-radius: 10em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
 }
-
 .profile #button_1{
   background-color: #333; 
-  margin-left: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 17px;
+}
+
+.friends-button {
+  width: 120px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 3px 0;
 }
 
 .events-tabs button{
@@ -178,29 +185,145 @@ button {
 }
 
 #screen5 h3{
-  margin-left: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
-
 #screen5 h4{
-  margin-left: 135px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
 
+#screen10 h3{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+#screen10 h4{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
 
-#create-event-form-in input, textarea{
-  width: 90%;
+.profile-anna-pic {
+  object-fit: cover;
+  border-radius: 10em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+}
+.anna-name{
+  display: flex;
+  justify-content: center; 
+  position: relative;
+}
+.add-friend-pic {
+  position: absolute;
+  margin-top: 23px !important;
+  margin-left: 30% !important;
+  border-radius: 0 !important;
+}
+.add-friend-pic2 {
+  position: absolute;
+  margin-top: 23px !important;
+  margin-left: 50% !important;
+  border-radius: 0 !important;
+}
+
+#create-event-form {
+  width: calc(100% - 23px); 
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px; 
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+#create-event-form-in input, 
+#create-event-form-in textarea {
+  width: calc(100% - 20px); 
   padding: 10px;
-  margin-top: 20px;
-  margin-left: 7px;
+  margin-top: 15px;
   border: 1px solid #ccc;
+  border-radius: 5px; 
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-left: 0;
 }
-#create-event-form label{
-  margin-left: 7px;
+
+.file-upload {
+  display: inline-block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-left: 0;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+.file-upload input[type="file"] {
+  display: none;
+}
+
+#create-event-form label {
+  display: block; /* Переводим на отдельную строку */
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+#create-event-form input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+#create-event-form button {
+  width: calc(50% - 10px); /* Две кнопки на одной строке */
+  padding: 10px;
+  margin: 15px 5px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #333; 
+  transition: background-color 0.3s;
+}
+
+#file-upload-button {
+  height: 200px !important;
+}
+
+.add-button {
+  background-color: transparent !important;
+  color: #333 !important;
+  border: 4px solid #333 !important;
+  border-radius: 10px !important;
+  height: 55px !important;
+  padding: 5px !important;
+  margin: 5px auto !important;
+  font-size: 17px;
+
 }
 
 nav {
   display: flex; /* Убедимся, что кнопки располагаются в ряд */
   justify-content: space-around; /* Равномерное распределение кнопок */
   margin-bottom: 0px; /* Отступ сверху для навигации */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
 }
 
 .hidden {
@@ -252,21 +375,18 @@ nav {
   padding: 20px;
   background-color: #f4f4f4;
   border: 1px solid #ddd;
-  border-radius: 5px;
   margin-top: 10px;
+  height: 1000px;
 }
 
 .content-panel.active {
   display: block;
 }
 
-
 .chat-list {
-  max-width: 600px;
   margin-top: 30px;
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   width: 100%;
 }
 
@@ -274,6 +394,15 @@ nav {
   display: flex;
   padding: 10px;
   transition: background 0.3s;
+}
+
+.participant-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+.participant-name {
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 .chat-item:hover {
@@ -291,6 +420,29 @@ nav {
   border-radius: 50%;
   margin-right: 10px;
 }
+.avatar-anna {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+.anna-text {
+  margin-left: 15px;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 10px;
+}
 
 .chat-details {
   flex-grow: 1;
@@ -305,21 +457,12 @@ nav {
   color: #888;
 }
 
-/*
-.content-container {
-  margin-left: 5%;
-  display: flex;
-  justify-content: space-between; 
-  margin-top: 10px; 
-}*/
-
-
 .content-container {
   margin-left: 3%;
   margin-right: 3%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 5px;
   margin-top: 10px;
 }
 
@@ -415,12 +558,14 @@ a {
 }
 
 .header-center{
-  margin-left: 26%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header-right{
-  margin-left: auto;
-  margin-right: 2%;
+  position: absolute;
+  right: 20px;
 }
 
 #events{
@@ -444,8 +589,7 @@ a {
   max-width: 600px;
   margin-top: 20px;
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   width: 100%;
 }
 
@@ -531,13 +675,12 @@ a {
   overflow-y: scroll;
   background-color: white;
   padding: 20px;
-  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .event-banner {
   width: 100%;
-  height: 150px;
+  height: 230px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -562,6 +705,31 @@ a {
   display: flex;
   align-items: center;
   margin-top: 20px;
+}
+
+/* Стили созданной карточки */
+#event-details {
+  margin-top: 3%;
+  height: 70%;
+  overflow-y: scroll;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#event-picture {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#event-title {
+  margin: 4%;
+  white-space: nowrap;
+}
+#event-date, #event-time, #event-place {
+  text-align: center;
+  margin: 5px 0;
+  font-size: 16px;
 }
 
 .subscribed-btn {
@@ -599,15 +767,19 @@ a {
 }
 
 .menu-image {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 37px;
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  right: 0;
+  position: fixed;
+  top: 90px;
+  right: 10px;
   background-color: #fff;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -632,4 +804,225 @@ a {
 
 .dropdown-content button:first-child {
   border-bottom: 1px solid #ddd;
+}
+
+
+/* Экран чата */
+
+#screen9_1.visible {
+  position: absolute; /* Чтобы занять всю область внутри phone-frame */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Гарантируем, что занимает всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  background: #fff; /* Цвет фона */
+}
+#screen9_2.visible {
+  position: absolute; /* Чтобы занять всю область внутри phone-frame */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Гарантируем, что занимает всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  background: #fff; /* Цвет фона */
+}
+#screen9_3.visible {
+  position: absolute; /* Чтобы занять всю область внутри phone-frame */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Гарантируем, что занимает всю высоту экрана */
+  display: flex;
+  flex-direction: column;
+  background: #fff; /* Цвет фона */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 147, 85);
+  color: white;
+  padding: 10px;
+  border-top: 20px solid #333;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.chat-title {
+  font-weight: bold;
+  display: flex;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message-incoming {
+  align-self: flex-start; /* Сообщение прилипает к левому краю */
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  margin-right: auto; /* Отодвигаем от правого края */
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.message-outgoing {
+  align-self: flex-end; /* Сообщение прилипает к правому краю */
+  background-color: rgb(255, 147, 85);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  margin-left: auto; /* Отодвигаем от левого края */
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.12);
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ced4da;
+  background-color: rgb(255, 147, 85);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.chat-input button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#search-container {
+  display: none;
+  margin-top: 10px;
+  width: 95%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+#results {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  display: none; /* Скрываем результаты до ввода */
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#results li {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+#results li:hover {
+  background-color: #eaeaea;
+}
+
+
+.friends-list {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 15px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+
+/* Модальное окно для друзей в мероприятие */
+.friends-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 82%;
+  max-height: 80%;
+  overflow-y: auto;
+  text-align: center;
+  font-size: 19px;
+}
+
+.friends-to-add {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  font-size: 18px;
+}
+
+.confirm-button,
+.close-button {
+  margin: 10px;
+  padding: 10px 15px;
+  background: rgb(255, 147, 85);
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 16px;
 }
