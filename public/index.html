@@ -6,6 +6,8 @@
     <title>Interactive Design</title>
     <link rel="stylesheet" href="styles.css">
     <script src="project\src\main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
 <div class="phone-frame">
@@ -38,7 +40,6 @@
     </header>
     <input type="search" placeholder="Поиск" class="search-input">
     <div class="content-container">
-      <div class="content-container">
         <div class="calendar-container">
           <table id="calendar2">
             <thead>
@@ -48,33 +49,34 @@
           </table>
         </div>
         <div class="map-container">
-          <script  type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3dab7fca31a4983d1c942b840cb0b109d922f6ab3d4a0cca5a146c784d60235c&amp;width=187&amp;height=185&amp;lang=ru_RU&amp;scroll=true"></script>
+          <script  type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3dab7fca31a4983d1c942b840cb0b109d922f6ab3d4a0cca5a146c784d60235c&amp;&amp;height=185&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
-      </div>
-  </div>
-  <div class="events-grid">
-    <button id="event1_button" onclick="openScreen8()">
-      <div class="event-card">
-        <img class="event-image" src="chester.png" width="150">
-        <div class="event-title">Встреча в баре</div>
-      </div>
-    </button>
-    <button>
-      <div class="event-card">
-        <img class="event-image" src="ice.png" width="150">
-        <div class="event-title">Поход на каток</div>
-      </div>
-    </button>
-  </div>
+    </div>
+
+    <div class="events-grid">
+      <button id="event1_button" onclick="openScreen8()">
+        <div class="event-card">
+          <img class="event-image" src="chester.png" width="150">
+          <div class="event-title">Встреча в баре</div>
+        </div>
+      </button>
+      <button>
+        <div class="event-card">
+          <img class="event-image" src="ice.png" width="150">
+          <div class="event-title">Поход на каток</div>
+        </div>
+      </button>
+    </div>
+
     <nav id="navigation3">
       <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
       <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
-      <button onclick="openScreen6()"><img class="message" src="massage.jpg" height="50" width="50"></button>
+      <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
       <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
     </nav>
   </section>
 
-  <!-- Мероприятие --> 
+  <!-- Мероприятие Честер  --> 
   <section id="screen8" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
     <header>
       <div class="header">
@@ -92,17 +94,41 @@
             Общий сбор на квиз-плиз в честере!! Всех жду
           </p>
         </div>
+        <div class="participants">
+          <h3>Список участников</h3>
+
+          <div class="participant-item" onclick="openScreen10()">
+            <img src="lastochka.jpg" class="avatar-anna">
+            <div class="participant-name">Анна</div>
+          </div>
+          <div class="participant-item" onclick="профиль_написать">
+            <div class="avatar">Ж</div>
+            <div class="participant-name">Женя</div>
+          </div>
+          <div class="participant-item" onclick="профиль_написать">
+            <div class="avatar">О</div>
+            <div class="participant-name">Олег</div>
+          </div>
+          <div class="participant-item" onclick="профиль_написать">
+            <div class="avatar">Н</div>
+            <div class="participant-name">Настя</div>
+          </div>
+          <div class="participant-item" onclick="профиль_написать">
+            <div class="avatar">Л</div>
+            <div class="participant-name">Лена</div>
+          </div>
+          <div class="participant-item" onclick="профиль_написать">
+            <div class="avatar">В</div>
+            <div class="participant-name">Вика</div>
+          </div>
+
+        </div>
         <div class="event-actions">
           <button class="subscribed-btn" disabled>Подписан</button>
           <div class="images-container">
             <button class="soc"><img src="vkontakte.png" alt="Картинка 1" class="inline-image"></button>
             <button class="soc"><img src="tg.png" alt="Картинка 2" class="inline-image"></button>
             <div class="dropdown">
-              <img src="other.png" alt="Меню" class="menu-image" onclick="toggleDropdownMenu()">
-              <div id="dropdownMenu" class="dropdown-content">
-                  <button onclick="editEvent()">Изменить</button>
-                  <button onclick="deleteEvent()">Удалить</button>
-              </div>
           </div>
           </div>
       </div>
@@ -110,11 +136,42 @@
     <nav id="navigation8">
       <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
       <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
-      <button onclick="openScreen6()"><img class="message" src="massage.jpg" height="50" width="50"></button>
+      <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
       <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
     </nav>
   </section>
 
+    <!-- Экран созданного мероприятия -->
+    <section id="screen11" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
+      <header>
+        <div class="header">
+          <div class="header-center"><p id="event-title"></p></div>
+          <img src="other.png" alt="Меню" class="menu-image" onclick="toggleDropdownMenu()">
+          <div id="dropdownMenu" class="dropdown-content">
+              <button onclick="editEvent()">Изменить</button>
+              <button onclick="deleteEvent()">Удалить</button>
+          </div>
+        </div>
+      </header>
+      <div id="event-details">
+          <img id="event-picture" src="" alt="Изображение мероприятия">
+          <h2 id="event-title"></h2>
+          <p id="event-date"></p>
+          <p id="event-time"></p>
+          <p id="event-place"></p>
+          <h2>Описание</h2>
+          <p id="event-description"></p>
+          <p id="data-event-id" class="screen hidden"></p>
+          <div class="participants-list"></div>
+          <button class="add-button">Добавить друзей</button>
+      </div>
+      <nav id="navigation8">
+        <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
+        <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
+        <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
+        <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
+      </nav>
+    </section>
 
   <!-- Экран уведомлений -->
   <section id="screen7" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
@@ -142,7 +199,7 @@
     <nav id="navigation3">
       <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
       <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
-      <button onclick="openScreen6()"><img class="message" src="massage.jpg" height="50" width="50"></button>
+      <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
       <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
     </nav>
   </section>
@@ -151,28 +208,25 @@
   <section id="screen4" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
     <header>СОЗДАТЬ МЕРОПРИЯТИЕ</header>
     <p></p>
-    <form id="create-event-form">
+    <form id="create-event-form" @submit.prevent="createEvent">
       <div id="create-event-form-in">
-      <input type="text" placeholder="Название мероприятия" required>
-      <input type="datetime-local" placeholder="Дата и время">
-      <textarea placeholder="Описание мероприятия"></textarea>
-      <p></p>
+        <input type="text" placeholder="Название мероприятия" v-model="newEvent.title" required>
+        <input type="text" placeholder="Место проведения" v-model="newEvent.place" required>
+        <input type="datetime-local" v-model="newEvent.datetime" required>
+        <textarea placeholder="Описание мероприятия" v-model="newEvent.description"></textarea>
+        <label class="file-upload">
+          <input type="file" @change="handleImage">
+          ЗАГРУЗИТЬ ФОТО
+        </label>
       </div>
-      <label>
-        Приватность:
-        <input type="checkbox" checked>
-      </label>
-      <p></p>
       <div id="add_button">
-      <button type="button" onclick=" ">ПРИГЛАСИТЬ ДРУЗЕЙ</button>
-      <p></p>
-      <button type="submit">СОХРАНИТЬ</button>
-    </div>
+        <button type="submit">СОХРАНИТЬ</button>
+      </div>
     </form>
     <nav id="navigation">
       <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
       <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
-      <button onclick="openScreen6()"><img class="message" src="massage.jpg" height="50" width="50"></button>
+      <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
       <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
     </nav>
   </section>
@@ -180,19 +234,24 @@
   <!-- Экран профиля пользователя -->
   <section id="screen5" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
     <div class="profile">
-      <img src="shmiglya.jpg" width="200px" height="200px" alt="Фото профиля">
+      <img src="user.png" class="profile-pic" width="200px" height="200px" alt="Фото профиля">
       <h3>Имя пользователя</h3>
       <button id="button_1">Редактировать профиль</button>
+      <h4 class="friends-button" onclick="openScreen12()">Мои друзья</h4>
       <h4>Мероприятия</h4>
       <div class="toggle-container">
-        <div class="toggle-button planned-btn active" onclick="toggleEvents('planned')">Запланированные</div>
-        <div class="toggle-button past-btn" onclick="toggleEvents('past')">Прошедшие</div>
+        <div class="toggle-button planned-btn active" onclick="toggleEvents('planned', this.closest('.screen'))">Запланированные</div>
+        <div class="toggle-button past-btn" onclick="toggleEvents('past', this.closest('.screen'))">Прошедшие</div>
+        
         <div class="slider"></div>
       </div>
     
       <!-- Панель с текстом для каждого раздела -->
       <div class="content-panel planned active">
         <p>Тут будет список ваших запланированных мероприятий.</p>
+        <div class="events-grid">
+    
+        </div>
       </div>
       <div class="content-panel past">
         <p>Тут будет список ваших прошедших мероприятий.</p>
@@ -201,46 +260,179 @@
     <nav id="navigation">
       <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
       <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
-      <button onclick="openScreen6()"><img class="message" src="massage.jpg" height="50" width="50"></button>
+      <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
       <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
     </nav>
   </section>
 
-  <!-- Экран друзей -->
+  <!-- Экран чужого профиля -->
+  <section id="screen10" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
+    <div class="profile">
+      <img src="lastochka.jpg" class="profile-anna-pic" width="200px" height="200px" alt="Фото профиля">
+      <div class="anna-name">
+        <h3 id="user-name">Анна</h3> 
+        <img src="add-user.png" class="add-friend-pic" width="20px" height="20px" onclick="addFriend()">
+        <img src="profile-message.png" class="add-friend-pic2" width="20px" height="20px" onclick="openScreen9_1()">
+      </div>
+      <p class="anna-text">Люблю ходить в бар по субботам</p>
+      <h4>Мероприятия</h4>
+      <div class="toggle-container">
+        <div class="toggle-button planned-btn active" onclick="toggleEvents('planned', this.closest('.screen'))">Запланированные</div>
+        <div class="toggle-button past-btn" onclick="toggleEvents('past', this.closest('.screen'))">Прошедшие</div>
+        
+        <div class="slider"></div>
+      </div>
+    
+      <!-- Панель с текстом для каждого раздела -->
+       <div class="content-panel planned active">
+        <div class="events-grid">
+          <button id="event1_button" onclick="openScreen8()">
+            <div class="event-card">
+              <img class="event-image" src="chester.png" width="150">
+              <div class="event-title">Встреча в баре</div>
+            </div>
+          </button>
+        </div>
+       </div>
+
+      <div class="content-panel past">
+        <p>Анна скрыла прошедшие мероприятия</p>
+      </div>
+    </div>
+    <nav id="navigation">
+      <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
+      <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
+      <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
+      <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
+    </nav>
+  </section>
+
+  <!-- Экран сообщений -->
   <section id="screen6" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
-    <header>Друзья</header>
-    <div id="but"><button>ДОБАВИТЬ ДРУЗЕЙ</button></div>
+    <header>Чаты</header>
+    <div id="but">
+        <button id="searchButton">НАЙТИ ДРУЗЕЙ</button>
+    </div>
+    
+    <div id="search-container">
+        <input type="text" id="searchInput" placeholder="Введите имя для поиска...">
+        <ul id="results"></ul>
+    </div>
     <div class="chat-list">
-      <div class="chat-item">
+      <div class="chat-item" onclick="openScreen9_1()">
           <div class="avatar">А</div>
           <div class="chat-details">
               <div class="chat-name">Анна</div>
               <div class="last-message">Привет! Как дела?</div>
           </div>
       </div>
-      <div class="chat-item">
+
+      <div class="chat-item" onclick="openScreen9_2()">
           <div class="avatar">Б</div>
           <div class="chat-details">
               <div class="chat-name">Борис</div>
               <div class="last-message">Когда встретимся?</div>
           </div>
       </div>
-      <div class="chat-item">
+      
+      <div class="chat-item" onclick="openScreen9_3()">  <!--поменять на 9_3-->
           <div class="avatar">К</div>
           <div class="chat-details">
               <div class="chat-name">Катя</div>
-              <div class="last-message">Не забудь про встречу завтра!</div>
+              <div class="last-message">Жду тебя на месте</div>
           </div>
       </div>
   </div>
     <nav id="navigation">
       <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
       <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
-      <button onclick="openScreen6()"><img class="message" src="massage.jpg" height="50" width="50"></button>
+      <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
       <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
     </nav>
   </section>
+
+    <!-- Экран друзей -->
+    <section id="screen12" class="screen hidden"> <!-- Уникальный ID и класс hidden -->
+      <header>Друзья</header>
+
+      <div class="friends-list">
+      </div>
+
+      <nav id="navigation">
+        <button onclick="openScreen3()"><img class="home" src="home.jpg" height="50" width="50"></button>
+        <button onclick="openScreen4()"><img class="add" src="add.jpg" height="50" width="50"></button>
+        <button onclick="openScreen6()"><img class="message-icon" src="massage.jpg" height="50" width="50"></button>
+        <button onclick="openScreen5()"><img class="profile" src="profile.jpg" height="50" width="50"></button>
+      </nav>
+    </section>
+
 </div>
-  <script src="script.js"></script>
+
+<div id="screen9_1" class="screen hidden">
+  <div class="chat-container">
+    <div class="chat-header">
+      <button onclick="openScreen6()" class="back-button"><</button>
+      <div class="chat-title" onclick="openScreen10()">
+        <div class="chat-avatar">А</div>
+        <p>Анна</p>
+      </div>
+    </div>
+    <div class="chat-messages">
+      <div class="message message-incoming">Привет! Как дела?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="messageInput1" placeholder="Введите сообщение" />
+      <button onclick="sendMessage()">Отправить</button>
+    </div>
+  </div>
+</div>
+
+<div id="screen9_2" class="screen hidden">
+  <div class="chat-container">
+    <div class="chat-header">
+      <button onclick="openScreen6()" class="back-button"><</button>
+      <div class="chat-title">
+        <div class="chat-avatar">Б</div>
+        <p>Борис</p>
+      </div>
+    </div>
+    <div class="chat-messages">
+      <div class="message message-incoming">Привет</div>
+      <div class="message message-outgoing">Привет</div>
+      <div class="message message-incoming">Когда встретимся?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="messageInput2" placeholder="Введите сообщение" />
+      <button onclick="sendMessage()">Отправить</button>
+    </div>
+  </div>
+</div>
+
+<div id="screen9_3" class="screen hidden">
+  <div class="chat-container">
+    <div class="chat-header">
+      <button onclick="openScreen6()" class="back-button"><</button>
+      <div class="chat-title">
+        <div class="chat-avatar">К</div>
+        <p>Катя</p>
+      </div>
+    </div>
+    <div class="chat-messages">
+      <div class="message message-incoming">Ты скоро?</div>
+      <div class="message message-outgoing">Уже одеваюсь.</div>
+      <div class="message message-incoming">Хорошо.</div>
+      <div class="message message-incoming">Жду тебя у входа.</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="messageInput3" placeholder="Введите сообщение"/>
+      <button onclick="sendMessage()">Отправить</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
+
+<!-- Добавить экран редактирования профиля -->
