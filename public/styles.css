@@ -6,7 +6,7 @@ body, h2, h3, h4, button, input, textarea {
 }*/
 
 body, h2, h3, h4, button, input, textarea {
-  font-family: Roboto;
+  font-family: cursive;
 }
 
 body, html {
@@ -304,7 +304,7 @@ div#create-event-form-in {
   color: #fff;
   background-color: #333;
   transition: background-color 0.3s;
-}
+}в
 
 #file-upload-button {
   height: 200px !important;
