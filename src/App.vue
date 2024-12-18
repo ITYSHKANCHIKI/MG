@@ -6,7 +6,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     showScreen("screen1");
-    setTimeout(() => showScreen("screen3"), 200); // поменять на screen2 (страницу авторизации) // 500 поменять на 2000
+    setTimeout(() => showScreen("screen2"), 500); // поменять на screen2 (страницу авторизации) // 500 поменять на 2000
     document.getElementById("login-form").addEventListener("submit", (e) => {
         e.preventDefault();
         showScreen("screen3");  // поменять на screen3 (главный экран)
